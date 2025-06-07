@@ -1,5 +1,9 @@
 dist
 .env
+# dotenv environment variables file
+.env.local
+.env
+
 node_modules
 # Logs
 logs
