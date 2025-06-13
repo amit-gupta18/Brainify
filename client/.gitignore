@@ -6,7 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+components/ui/New.tsx
+.New.tsx
 node_modules
 dist
 dist-ssr
