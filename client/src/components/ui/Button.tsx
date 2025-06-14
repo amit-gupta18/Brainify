@@ -17,14 +17,13 @@ const VariantStyles = {
     "secondary": "bg-purple-300 text-purple-600 ",
 }
 
-const defaultStyles = "rounded-md m-2 p-4 flex"
+const defaultStyles = " m-2 p-4 flex justify-center items-center gap-2"
 
 const sizeStyles= {
-    "sm" : "px-1 py-1",
-    "md" : "px-2 py-2",
-    "lg" : "px-4 py-3"
+    "sm" : "px-1 py-1 rounded-sm",
+    "md" : "px-2 py-2 rounded-md",
+    "lg" : "px-4 py-3 rounded-lg"
 }
-
 
 
 export const Button = (props: ButtonProps) => {
@@ -33,4 +32,4 @@ export const Button = (props: ButtonProps) => {
         <button className={`${VariantStyles[props.variant]} ${defaultStyles} ${sizeStyles[props.size]}`} >{props.startIcon} {props.text} {props.endIcon}</button>
     )
 }   
- 
+  
