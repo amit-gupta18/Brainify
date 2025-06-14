@@ -5,7 +5,7 @@ dotenv.config();
 
 
 function userMiddleware(req: Request, res: Response, next: NextFunction) {
-
+    console.log("User middleware called");
     const header = req.headers["authorization"];
     const decoded = jwt.verify(header as string , process.env.JWT_SECRET_KEY as string);
     if(decoded)
