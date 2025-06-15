@@ -3,7 +3,8 @@ export function random(len : number){
     let ans = "";
     for(let i = 0 ; i < len ; i++)
     {
-        ans+= options;
+        let index = Math.floor(Math.random() * options.length);
+        ans += options[index];
     }
     return ans;
 }       
