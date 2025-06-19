@@ -1,5 +1,6 @@
 import './App.css'
-import { Button } from './components/ui/Button'
+import { Button } from './components/Button'
+import { Card } from './components/Card'
 import { PlusIcon } from './icons/PlusIcon'
 import { ShareIcon } from './icons/ShareIcon'
 
@@ -8,12 +9,18 @@ function App() {
 
   return (
     <>
-      <h1 className='text-primary bg-blue-300 rounded-xl' >This is a react App intitialised with vite and typescript.</h1>
-      <Button startIcon={<PlusIcon size="md"/>} variant="primary"  size="sm" text="Hello" onClick={() => { console.log("button clikced") }} />
-      <Button startIcon={<ShareIcon size = "lg"/>}variant="secondary" size="md" text="Hello" onClick={() => { console.log("button clikced") }} />
-      <Button endIcon={<ShareIcon size = "md"/>}variant="secondary" size="lg" text="Hello" onClick={() => { console.log("button clikced") }} />
+      <div className='p-4'>
+        <div className='flex justify-end gap-4'>
+          <Button variant='primary' text='Share Brain' startIcon={<ShareIcon size='md' />} />
+          <Button variant='secondary' text='Add Content' startIcon={<PlusIcon size='md' />} />
+        </div>
+        <div className='flex gap-4'>
+          <Card title='tweet post' link='https://x.com/amit_intj/status/1910726593930015070' type='twitter' />
+          <Card title='Youtube Video' link='https://www.youtube.com/watch?v=bsvmj3521Vs' type='youtube' />
+        </div>
+      </div>
     </>
   )
 }
-
+;
 export default App
