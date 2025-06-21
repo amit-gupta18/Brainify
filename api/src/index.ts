@@ -8,6 +8,8 @@ import dotenv from 'dotenv';
 import userMiddleware from "./middleware";
 import { random } from "./utils";
 import { randomString } from "zod/dist/types/v4/core/util";
+import cors from "cors";
+
 
 // Extend Express Request type to include userId
 declare global {
@@ -20,6 +22,7 @@ declare global {
 
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 // jwt.generate("token");
 app.post("/api/v1/signup", async (req, res) => {
@@ -33,9 +36,11 @@ app.post("/api/v1/signup", async (req, res) => {
             username: username,
             password: password
         })
+        console.log("User created successfully");
         res.json({
             message: "User signed up !"
         })
+
 
     } catch (err) {
         res.status(411).json({
