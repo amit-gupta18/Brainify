@@ -10,6 +10,7 @@ import { useState } from 'react';
 
 function Dashboard() {
   const [open, setOpen] = useState(false);
+  const content = localStorage.getItem("content");
 
   return (
     <>
@@ -26,11 +27,14 @@ function Dashboard() {
           <div className='flex flex-wrap gap-4 mt-8 mx-8'>
             <Card title='tweet post' link='https://x.com/amit_intj/status/1910726593930015070' type='twitter' />
             <Card title='Youtube Video' link='https://www.youtube.com/watch?v=bsvmj3521Vs' type='youtube' />
+            {content && JSON.parse(content).map((item: { title: string; link: string; type: string }, index: number) => {
+              const cardType = item.type === "twitter" || item.type === "youtube" ? item.type : "twitter";
+              return <Card key={index} title={item.title} link={item.link} type={cardType} />;
+            })}
           </div>
         </div>
       </div>
     </>
   )
-}
-;
+} ;
 export default Dashboard
