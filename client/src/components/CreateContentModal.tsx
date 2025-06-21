@@ -18,7 +18,7 @@ export function CreateContentModal({ open, onClose }: CreateContentModalProps) {
                             <CrossIcon size="lg" />
                         </button>
                         <Input />
-                        <button className="bg-blue-500 cursor-pointer rounded mt-4 ">
+                        <button className="bg-blue-500 cursor-pointer rounded mt-4 " onClick={onClose}>
                             Sumbit
                         </button>
                     </div>
